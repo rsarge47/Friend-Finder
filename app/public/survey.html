@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <title>Friend Finder</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Friend-Finder</h1>
+            <h3>Complete the survey to find friends!</h3>
+        </div>
+        <h4>Name</h4>
+        <input type="text" name="" id="name" class="about">
+        <h4>Link your Picture</h4>
+        <input type="text" name="" id="photo" class="about">
+        <hr>
+
+        <h4>You like dogs.</h4>
+        <select class="rank" id="q1">
+            <option value=""></option>
+            <option value="1">1 (Strongly Agree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Disagree</option>
+        </select>
+        <hr>
+        
+        <h4>You like children.</h4>
+        <select class="rank" id="q2">
+            <option value=""></option>
+            <option value="1">1 (Strongly Agree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Disagree)</option>
+        </select>
+        <hr>
+        
+        <h4>You consider yourself ambitious.</h4>
+        <select class="rank" id="q3">
+            <option value=""></option>
+            <option value="1">1 (Strongly Agree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Disagree)</option>
+        </select>
+        <hr>
+        
+        <h4>Staying home on the weekend is fun.</h4>
+        <select class="rank" id="q4">
+            <option value=""></option>
+            <option value="1">1 (Strongly Agree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Disagree)</option>
+        </select>
+        <hr>
+        
+        <h4>Cats are great pets.</h4>
+        <select class="rank" id="q5">
+            <option value=""></option>
+            <option value="1">1 (Strongly Agree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Disagree)</option>
+        </select>
+        <hr>
+        
+        <h4>Exercise is an important part of your life.</h4>
+        <select class="rank" id="q6">
+            <option value=""></option>
+            <option value="1">1 (Strongly Agree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Disagree)</option>
+        </select>
+        <hr>
+        
+        <h4>You value local culture.</h4>
+        <select class="rank" id="q7">
+            <option value=""></option>
+            <option value="1">1 (Strongly Agree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Disagree)</option>
+        </select>
+        <hr>
+        
+        <h4>Being honest and faithful is important.</h4>
+        <select class="rank" id="q8">
+            <option value=""></option>
+            <option value="1">1 (Strongly Agree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Disagree)</option>
+        </select>
+        <hr>
+        
+        <h4>You are an outgoing person.</h4>
+        <select class="rank" id="q9">
+            <option value=""></option>
+            <option value="1">1 (Strongly Agree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Disagree)</option>
+        </select>
+        <hr>
+        
+        <h4>Taking risks is never a good idea.</h4>
+        <select class="rank" id="q10">
+            <option value=""></option>
+            <option value="1">1 (Strongly Agree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Disagree)</option>
+        </select>
+        <hr>
+
+        <button class="btn btn-primary" id="submit">Submit</button>
+    </div>
+
+    <div id="resultsModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h2 class="modal-title"><strong>Most compatable friend</strong></h2>
+                </div>
+                <div class="modal-body">
+                    <h2 id="matchName"></h2>
+                    <img id="matchImg" src="" alt="" width="200px">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        $('#submit').on('click', function(){
+            function validateForm() {
+                var isValid = true;
+                $('.about').each(function() {
+                    if ( $(this).val() === '' ) {
+                        isValid = false;
+                    }
+                });
+                $('.rank').each(function() {
+                    if( $(this).val() === '') {
+                        isValid = false
+                    }
+                })
+                return isValid;
+            }
+        
+            if (validateForm() == true)
+            {
+                var userData = {
+                    name: $('#name').val(),
+                    photo: $('#photo').val(),
+                    scores: [$('#q1').val(), $('#q2').val(), $('#q3').val(), $('#q4').val(), $('#q5').val(), $('#q6').val(), $('#q7').val(), $('#q8').val(), $('#q9').val(), $('#q10').val(), ]
+                }
+                
+                var currentURL = window.location.origin;
+                
+                $.post(currentURL + '/api/friends', userData, function(data){
+                    $('#matchName').text(data.name);
+                    $('#matchImg').attr('src', data.photo);
+                    $('#resultsModal').modal('toggle');
+                });
+            }
+            else
+            {
+                alert('Complete form then submit.');
+            }
+            return false;
+        });
+        
+        $('#submit').click(function() {
+            if(window.location.href.indexOf('#resultsModal') != -1) {
+                $('#resultsModal').modal('show');
+            }
+        });
+
+    </script>
+</body>
+
+</html>
